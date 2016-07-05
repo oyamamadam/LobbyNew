@@ -1,0 +1,78 @@
+<ion-view title="" class="back-image" style = "background-color:#eee;">
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsclose.png" class="addfunds_backbtnimage" />Contest Player Selection
+      </ion-nav-back-button>
+      <ion-nav-buttons side="right">
+        <button class="button-clear" ng-click="contestinfo()">
+          <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsinfo.png" class="addfunds_backbtnimage" />
+        </button>
+        <button class="button button-energized button-clear" style="margin-right:30px;" ng-click="submit()">Submit</button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+  <ion-content>
+      <div style="height:30px; background-color:#5ad; padding-left:20px;padding-top:5px;">
+        <img src="images/mlb.png" style="float:left;width:20px;heght:20px; vertical-align:middle; margin:auto;">
+        <div style="margin:auto; margin-left:30px;">Starts 7pm ET  
+          <div style="float:right;margin:auto; margin-right:20px;">{{date | date:'hh:mm:ss'}}</div>
+        </div>
+      </div>
+
+    	<div style=" height:40px; background-color:#444; margin:auto; padding-top:10px; padding-left:20px; padding-right:20px; color:#fff; font-size:20px; font-weight:bold;">
+        <div style="float:left;">New Entry</div>
+        <div style="float:right;">1</div>
+        <div style="color:#888; float:right; padding-right:20px;"> MAX</div>
+    	</div>
+
+      <div class="list">
+
+        <div class="item"  ng-repeat="item in items_playerlist track by $index" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="item.showBlankitem==true" >
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">{{item.position}}</span>
+            </div>
+            <img src="images/iconsaddentry.png" ng-click="playerAdd()" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-click="playerselect_item_click(item)" ng-show="item.showPlayeritem==true" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">{{item.position}}</span>
+              <span>{{item.firstname}}</span>
+              <span style="margin-left:10px;">{{item.lastname}}</span>  
+              <div>
+                <span>{{item.homeTeam}}</span> @ <span>{{item.awayTeam}}</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+               {{item.startsAt | date:'yyyy-MM-dd HH:mm'}}
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd();$event.stopPropagation()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">{{item.salary}}</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>{{item.ffpg}}</span>
+                <span style="margin-left:10px;">{{item.played}}</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        
+    <div class="bar bar-dark" style="width:100%; height:60px; text-align:center; color:#444;">
+      <button class="button button-balanced button-clear" side="left" style="margin-left:30px;" ng-click="contestimport()">Import</button>
+       <div style="color:#fff;margin:auto;">${{salary_remaining}} salary remaining</div>
+       <button class="button button-balanced button-clear" side="right" style="margin-right:30px;" ng-click="contestclearall()">Clear All</button>
+    </div>
+  </ion-content>
+
+</ion-view>

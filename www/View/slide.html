@@ -1,0 +1,86 @@
+<ion-view hide-nav-bar="true" title="" class = "back-image" id="slide" style="background-image: url('images/mobile-baseball.jpg')">   
+
+    <ion-content ng-controller="SlideCtrl">
+
+      <div class="hometitle"> 
+      <div class="funtitle" >
+        
+      </div>
+      <div class="description">
+        ThHE LEADER IN ONE-DAY FANTASY SPORTS
+      </div>
+    </div>
+    
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <div id = "slide" class = "back-image" style="height:{{he}}px">
+          <div class="slide1" style="padding-top:{{he*0.3}}px" >
+            <div class="slide1text1" >
+              PLAY FANTASY SPORTS IN
+            </div>
+            <div class="slide1text2" >
+              ONE DAY
+            </div>
+            <div class="slide1text3" >
+              FOR REAL CASH PRIZES
+            </div>
+            <div class="slide1btn">
+              <button class="button button-clear button-small btnhowto" >
+                HOW TO PLAY >>
+              </button>
+            </div>
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div id = "slide" class = "back-image" style="height:{{he}}px">
+          <div class="slide1" style="padding-top:{{he*0.3}}px">
+            <div class="slide2text">
+              CHOOSE FROM THOUSANDS OF ONE-DAY LEAGUES AVAILABLE NOW
+            </div>  
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div id = "slide" class = "back-image" style="height:{{he}}px">
+          <div class="slide1" style="padding-top:{{he*0.3}}px">
+            <div class="slide2text">
+              PICK YOUR TEAM IN MINUTES,
+              JUST STAY UNDER THE SALARY CAP
+            </div> 
+          </div>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div id = "slide" class = "back-image" style="height:{{he}}px">
+          <div class="slide1" style="padding-top:{{he*0.3}}px">
+            <div class="slide2text">
+              TRACK LIVE SCORING & WIN REAL MONEY THAT DAY!
+            </div> 
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+
+    <div class="homebottom">
+      <div class="bottomdescription">
+        <button class="button button-balanced button-small btnJoin {{joinclick}}" ng-mousedown="down()" ng-mouseup="up()" ng-click="signup()">
+          JOIN
+        </button>
+      </div>
+      <div class="bottomdescription bottomaccount">
+        Already have an account?
+      </div>
+      <div class="bottomdescription">
+        <button class="button button-clear button-small btnlogin" ng-click="login()">
+          LOG IN
+        </button>
+      </div>
+
+    </div>
+    <div class="bottomtext">
+      @ 2009-2015 FanPicks Inc. All Rights Reserved.
+    </div>
+    </ion-content>
+
+</ion-view>

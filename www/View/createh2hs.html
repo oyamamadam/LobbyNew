@@ -1,0 +1,426 @@
+<ion-view title="" class="back-image" style = "background-color:#eee;">
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsclose.png" class="addfunds_backbtnimage" />Create Public H2Hs
+      </ion-nav-back-button>
+      <ion-nav-buttons side="right">
+        <button class="button button-energized button-clear" style="margin-right:30px;" ng-click="create()">Create</button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+  <ion-content>
+      <div style="height:30px; background-color:#5ad; padding-left:20px;padding-top:5px;">
+        <img src="images/mlb.png" style="float:left;width:20px;heght:20px; vertical-align:middle; margin:auto;">
+        <div style="margin:auto; margin-left:30px;">Starts 7pm ET  
+          <div style="float:right;margin:auto; margin-right:20px;">{{date | date:'hh:mm:ss'}}</div>
+        </div>
+      </div>
+
+    	<div style=" height:40px; background-color:#444; margin:auto; padding-top:10px; padding-left:20px; padding-right:20px; color:#fff; font-size:20px;">
+        <div style="float:left;">Draft Your Lineup</div>
+    	</div>
+
+      <div class="list">
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">QB</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">QB</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">RB</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">RB</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">RB</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">RB</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">WR</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">WR</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">WR</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">WR</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">WR</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">WR</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">TE</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">TE</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">K</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">K</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">K</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">K</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="item" ng-click="playerselect_item_click()" style="height:80px; margin:0px; padding:0px;">
+          <div ng-show="showBlankitem" ng-click="playerAdd()">
+            <div style="float:left; font-size:20px; line-height:36px; padding:20px;">Select
+              <span style="color:#7df; font-weight:bold; font-size:22px;">D</span>
+            </div>
+            <img src="images/iconsaddentry.png" style="float:right;padding:20px;">
+          </div>
+          <div class="item-thumbnail-left" ng-show="showPlayeritem" >
+            <img src="images/placeholder_avatar.png" style="top:0px;">
+            <div style="font-size:20px; float:left;">
+              <span style="color:#7df; font-weight:bold; font-size:22px;">D</span>
+              A Rodgers
+              <div>
+                <span>KC</span> @ <span>GB</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                Mon 8:30pm ET
+              </div>
+            </div>
+
+            <button class="button button-clear" style="float:right; top:10px;" ng-click="playerAdd()">
+              <img src="images/action_bar_iconsswap.png" >
+            </button>
+
+            <div style="float:right; border-right:1px; border-right-style:solid;">
+              <div style="color:#000; font-weight:bold; font-size:22px;">$9000</div>
+              <div style="font-size:15px; color:#aaa">
+                <span>FPPG</span>
+                <span>Played</span>
+              </div>
+              <div style="color:#aaa; font-size:15px; font-weight:bold;">
+                <span>21.66</span>
+                <span>2</span>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!--<div class="item button button-full button-balanced" ng-click="submit()">
+          SUBMIT ENTRY
+        </div>-->
+      </div>
+    <div class="bar bar-dark" style="width:100%; height:60px; text-align:center; color:#444;">
+      <button class="button button-balanced button-clear" side="left" style="margin-left:30px;" ng-click="contestimport()">Import</button>
+       <div style="color:#fff;margin:auto;">$60000 salary remaining</div>
+       <button class="button button-balanced button-clear" side="right" style="margin-right:30px;" ng-click="contestclearall()">Clear All</button>
+    </div>
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,129 @@
+<ion-view cache-view="false" title="" class="back-image" style = "background-color:#444;">
+    <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsclose.png" class="addfunds_backbtnimage" />Contest Details
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content style="overflow:hidden;" scroll="false">
+        <div style="color:#07d; font-size:20px; font-weight:bold; margin:10px;float:left; width:100%;">
+            {{title}}
+        </div>
+        <div style="margin:5px; font-size:20px; float:left; width:100%; ">
+            <div style="float:left; width:55%">
+                <div style="color:#888;">Entries</div>
+                <div style="color:#fff;">{{currentEntries}}/{{maxEntries}}</div>
+            </div>
+            <div style="float:left; width:20%">
+                <div style="color:#888;">Entry</div>
+                <div style="color:#fff";>${{entryFee}}</div>
+            </div>
+            <div style="float:left; width:20%">
+                <div style="color:#888";>Prizes</div>
+                <div style="color:#fff";>${{totalPrizes}}</div>
+            </div>
+        </div>
+
+        <div style="height:30px; background-color:#5ad; padding-left:20px;padding-top:5px; color:#fff;float:left; width:100%;">
+            <img src="images/mlb.png" style="float:left;width:20px;heght:20px; vertical-align:middle; margin:auto;">
+            <div style="margin:auto; margin-left:30px;">{{startAt | date:'yyyy-MM-dd HH:mm'}}
+              <div style="float:right;margin:auto; margin-right:20px;">{{date | date:'hh:mm:ss'}}</div>
+            </div>
+        </div>
+
+        <div style="float:left; width:100%;">
+            <div class="button button-clear button-light menu_btn_custom1" style="float:left; width:25%;" ng-click="entries()">
+                ENTRIES<br>
+            </div>
+            <div class="button button-clear button-light menu_btn_custom1" style="float:left; width:25%;" ng-click="games()">
+                GAMES<br>
+            </div>
+            <div class="button button-clear button-light menu_btn_custom1" style="float:left; width:25%;" ng-click="prizes()">
+                PRIZES<br>
+            </div>
+            <div class="button button-clear button-light menu_btn_custom1" style="float:left; width:25%;" ng-click="rulescon()">
+                RULES<br>
+            </div>
+        </div>
+        <div class="contest_menu_bar" style="float:left; height:5px; margin:auto; background-color:#444; width:100%;">
+            <div class="{{state0}}"></div>
+            <div class="{{state1}}"></div>
+            <div class="{{state2}}"></div>
+            <div class="{{state3}}"></div>
+        </div>
+       
+        
+    </ion-content>
+
+    <ion-slide-box style="top:220px; width:100%;background-color:#fff;" on-slide-changed="slideHasChanged($index)" show-pager="false">
+        <ion-slide style="height:{{he}}px;">
+          <div class="list" style="height:{{he}}px;">
+            <ion-content style="top:20px;">
+            <div class="item" style="position: relative;" ng-repeat="item in users">
+                <div class="contest_item_custom" >{{$index + 1}}</div>
+                <img src="images/placeholder_avatar.png" class="contest_item_custom1" >
+                <div style="float:left;margin-left:40px;">{{item.username}}</div>
+            </div>
+            </ion-content>
+          </div>
+        </ion-slide>
+
+        <ion-slide style="height:{{he}}px;">
+            <div class="list" style="height:{{he}}px;">
+                <ion-content style="top:20px;">
+              <div class="item" ng-repeat="item in gamesdata">
+                <div style="font-weight:bold; font-size:25px; float:left; margin-top:10px;">0</div>
+                <div style="font-weight:bold; font-size:25px; float:right; margin-top:10px;">0</div>
+                <div style="font-size:20px;text-align:center;">
+                    <span>{{item.homeTeam}}</span> @ <span>{{item.awayTeam}}</span>
+                    <div style="color:#aaa;">{{item.startsAt | date:'yyyy-MM-dd HH:mm'}}</div>
+                </div>
+              </div>
+              </ion-content>
+            </div>
+        </ion-slide>
+
+        <ion-slide style="height:{{he}}px;">
+            <div class="list" style="height:{{he}}px;">
+            <ion-content style="top:20px;">
+              <div class="item" ng-repeat="item in prizesdata">
+                <div style="font-weight:bold; font-size:25px; float:left;">{{item.rank}}</div>
+                <div style="font-size:25px; float:right;">${{item.prize}}</div>
+              </div>
+              
+          </ion-content>
+            </div>
+        </ion-slide>
+
+        <ion-slide style="height:{{he}}px;">
+            <div>
+                Note: For purpose of FanPicks defensive scoring,points allowed are calculated as: 6*(Rushing TD + Receiving TD + Own fumbles recovered for TD) + 2*(Two point conversions) + Extra points + 3*(Field Goals)
+            </div>
+            <div style="width:100%; height:20px; color:#fff; background-color:#555;">Offense</div>
+          <div class="list" style="height:{{he}}px;">
+            <ion-content style="top:20px;">
+            <div class="item">
+                <div style="font-size:20px;font-weight:bold; float:left;">
+                    RuY
+                    <div style="font-size:15px;color:#888; float:left;">Rushing yards</div>
+                </div>
+                <div style="font-size:20px;color:#fd7; float:right;">+0.1</div>
+            </div>
+            <div class="item">
+                <div style="font-size:20px;font-weight:bold; float:left;">
+                    RuY
+                    <div style="font-size:15px;color:#888; float:left;">Rushing yards</div>
+                </div>
+                <div style="font-size:20px;color:#fd7; float:right;">+0.1</div>
+            </div>
+            <div class="item">
+                <div style="font-size:20px;font-weight:bold; float:left;">
+                    RuY
+                    <div style="font-size:15px;color:#888; float:left;">Rushing yards</div>
+                </div>
+                <div style="font-size:20px;color:#fd7; float:right;">+0.1</div>
+            </div>
+        </ion-content>
+          </div>
+        </ion-slide>
+    </ion-slide-box>
+</ion-view>

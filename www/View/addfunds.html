@@ -1,0 +1,106 @@
+<ion-view title="" class="back-image" >
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none;"></i><img src="images/action_bar_iconsclose.png" class="addfunds_backbtnimage" />
+      Add Funds</div>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content ng-controller="AddfundsCtrl">
+    	<div>
+    		<div class="list addfunds_list" >
+    			<div class="addfunds_section1" >
+    				<div class="addfunds_label1" >AMOUNT</div>
+    				<div class="addfunds_btn1" >
+    					<button class="button button-outline button-positive addfunds_ammountbtn {{active10}}" ng-click="amount10()">$100</button>
+    					<button class="button button-outline button-positive addfunds_ammountbtn {{active25}}" ng-click="amount25()">$200</button>
+    					<button class="button button-outline button-positive addfunds_ammountbtn {{active50}}" ng-click="amount50()">$500</button>
+    				</div>
+    				<div class="addfunds_label1" >OR ENTER A CUSTOM AMOUNT</div>
+    			</div>
+    			<!--<div class="addfunds_label2" >
+    				Deposite amount {{amount}}
+    			</div>-->
+    			<p >{{counter}}</p>
+    			<DIV ng-show="showvalue">
+	    			<div class="addfunds_section1">
+		    			<!--<div class="addfunds_label4">$</div>-->
+		    			<div class="addfunds_label1">SELECT STATE / PROVINCE</div>
+		    		</div>
+		    		<div class="addfunds_label2" >
+	    				<div style="float:left;">State/Province</div>
+	    				<div style="margin:auto;text-align:center;">Alabama</div>
+	    			</div>
+	    			<div class="addfunds_section1">
+	    				<div class="addfunds_label3" > CHOOSE A PAYMENT METHOD</div>
+	    				<div class="addfunds_btn1">
+	    					<button class="button button-balanced addfunds_creditbtn" ng-click="credit()">Credit Card</button>
+	    					<button class="button button-energized addfunds_paypalbtn" ng-click="paypal()">PayPal</button>
+	    				</div>
+	    			</div>
+	    		</DIV>
+    			<DIV ng-show="showvalue1">
+    				<div class="addfunds_section1">
+		    			<div class="addfunds_label4">$</div>
+		    			<button class="button button-clear addfunds_label_payment" ng-click="changepayment()">Change payment method</button>
+		    		</div>
+		    		<div class="list addfunds_list1">
+		    			<div class="item item-input"></div>
+		    			<div class="item item-input">
+							<input class="addfunds_card" type="text" placeholder="Cardholder Name">
+						</div>
+						<div class="item item-input">
+							<input class="addfunds_card" type="text" placeholder="Card Number">
+						</div>
+						<div class="item item-input">
+							<input class="addfunds_card" type="text" placeholder="CVV">
+						</div>
+						<div class="item item-input">
+							<input class="addfunds_card" type="text" placeholder="Expiration Date">
+						</div>
+						<div class="item item-input">
+							<input class="addfunds_card" type="text" placeholder="State/Province">
+						</div>
+						<div class="item item-input">
+							<input class="addfunds_card" type="text" placeholder="Zip Code">
+						</div>
+		    		</div>
+    			</DIV>
+    			<div class="addfunds_section2">
+    				<div class="addfunds_label3">Frequently Asked Questions</div>
+    				<div class="addfunds_label3">support@fanpicks.com</div>
+    			</div>
+    		</div>
+    		
+<!--
+	    	<div class="list item item-input {{isSelected(0)}}" style="background:none !important;">
+				<input class="logintext" type="text" ng-click="selectItem(0)" placeholder="Email">
+			</div>
+			<div class="list item item-input {{isSelected(3)}}" style="background:none !important;">
+			    <input class="logintext" type="password" ng-click="selectItem(3)" placeholder="Password" />
+			    <button type="button" class="button button-clear" id="passwordvisible" ng-click="visible1()">
+			    	{{visiblestate}}
+			    </button>
+			</div>
+			<div class="list item item-input item-toggle itemtogglecustom" style="height:50px; background:none !important; color:#fff;">
+			    Keep me logged in?
+			    <label class="toggle toggle-energized" >
+			        <input type="checkbox">
+			        <div class="track">
+			        	<div class="handle"></div>
+			        </div>
+			    </label>
+			</div>
+			<div class="list">
+				<button class="button button-block button-energized" ng-click="menu()">
+					LOG IN
+				</button>
+			</div>
+			<div class="forgotten">
+				<button class="button button-clear" style="color:#fff;">
+					Forgotten your password?
+				</button>
+			</div>
+		</div>-->
+    </ion-content>
+</ion-view>

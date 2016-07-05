@@ -1,0 +1,116 @@
+<ion-view title="" class="back-image" style = "background-color:#eee;">
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none;"></i><img src="images/action_bar_iconsback.png" class="addfunds_backbtnimage" />Contests
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+    	
+	    	<div class="contest_title">Enter Contests</div>
+	    	
+        <div class="contest_item" ng-click="contest_featured_click()" ng-show="featured_state">
+          <div class="contest_item1">
+            <div class="contest_item_text1">
+              Featured
+            </div>
+            <div class="contest_item_text2">
+              Special promotions and <br> recommended contests
+            </div>
+          </div>
+          <img src="images/chevronright.png" class="contest_item_img">
+          <div class="contest_item_value">
+              {{featured_count}}
+          </div>
+        </div>
+        
+        <div class="contest_item" style="margin-bottom:1px;" ng-click="contest_league_click()" ng-show="league_state">
+          <div class="contest_item1">
+            <div class="contest_item_text1">
+              League
+            </div>
+            <div class="contest_item_text2">
+              Leagues with multiple prize<br>positions
+            </div>
+          </div>
+          <img src="images/chevronright.png" class="contest_item_img">
+          <div class="contest_item_value">
+              {{league_count}}
+          </div>
+        </div>
+
+        <div class="contest_item" style="margin-top:1px; margin-bottom:1px;" ng-click="contest_50_click()" ng-show="fifty_state">
+          <div class="contest_item1">
+            <div class="contest_item_text1">
+              50/50
+            </div>
+            <div class="contest_item_text2">
+              Low return leagues where half the<br>pack win prizes
+            </div>
+          </div>
+          <img src="images/chevronright.png" class="contest_item_img">
+          <div class="contest_item_value">
+              {{fifty_count}}
+          </div>
+        </div>
+
+        <div class="contest_item" style="margin-top:1px; margin-bottom:1px;" ng-click="contest_tournament_click()" ng-show="tournament_state">
+          <div class="contest_item1">
+            <div class="contest_item_text1">
+              Tournament
+            </div>
+            <div class="contest_item_text2">
+             Large player counts with large prize<br> pools
+            </div>
+          </div>
+          <img src="images/chevronright.png" class="contest_item_img">
+          <div class="contest_item_value">
+              {{tournament_count}}
+          </div>
+        </div>
+
+        <div class="contest_item" style="margin-top:1px; margin-bottom:1px;" ng-click="contest_headto_click()" ng-show="head_state">
+          <div class="contest_item1">
+            <div class="contest_item_text1" style="margin-top:8px;">
+              Head to Head
+            </div>
+            <div class="contest_item_text2">
+             Complete against a single rival
+            </div>
+          </div>
+          <img src="images/chevronright.png" class="contest_item_img">
+          <div class="contest_item_value">
+              {{head_count}}
+          </div>
+        </div>
+
+
+        <div class="contest_item" style="margin-top:1px; margin-bottom:1px;" ng-click="contest_multiplier_click()" ng-show="multiplier_state">
+          <div class="contest_item1">
+            <div class="contest_item_text1">
+              Multiplier
+            </div>
+            <div class="contest_item_text2">
+             Contest where winners receive<br>a multiple of entry fee
+            </div>
+          </div>
+          <img src="images/chevronright.png" class="contest_item_img">
+          <div class="contest_item_value">
+              {{multiplier_count}}
+          </div>
+        </div>
+
+        <div class="contest_title">Create Contests</div>
+        <div class="contest_item" ng-click="contest_create_click()">
+          <div class="contest_item1">
+            <div class="contest_item_text1">
+              Create Public HZHs
+            </div>
+            <div class="contest_item_text2">
+             Take on challengers in your <br>own head-to-heads
+            </div>
+          </div>
+          <img src="images/iconsaddentry.png" class="contest_item_img" style="margin-right:20px;" ng-click="contest_create_click()">
+        </div>
+    </ion-content>
+</ion-view>

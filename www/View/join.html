@@ -1,0 +1,63 @@
+
+<ion-view title="" style = "background-color:#ddd;">
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i>Signup
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content ng-controller="SignupCtrl">
+		<div style="background-color:#FFF;">
+			<label class="list item item-input {{isSelected(0)}}">
+        		<span class="input-label inputlabelcustom">First Name</span>
+				<input ng-model="userfirstname" type="text" ng-click="selectItem(0)" placeholder="Your first name" autofocus>
+			</label>
+        	<label class="list item item-input {{isSelected(1)}}">
+        		<span class="input-label inputlabelcustom">Last Name</span>
+				<input ng-model="userlastname" type="text" ng-click="selectItem(1)" placeholder="Your last name" autofocus>
+			</label>
+			<label class="list item item-input {{isSelected(2)}}">
+				<span class="input-label inputlabelcustom">Email</span>
+			    <input ng-model="useremail" type="text" ng-click="selectItem(2)" placeholder="This also serves as you">
+			</label>
+			<label class="list item item-input {{isSelected(3)}}">
+			    <span class="input-label inputlabelcustom">Username</span>
+			    <input ng-model="username" type="text" ng-click="selectItem(3)" placeholder="How you appear to other users">
+			</label>
+			<div class="list item item-input {{isSelected(4)}}">
+			    <span class="input-label inputlabelcustom">Password</span>
+			    <input ng-model="userpassword" type="password" ng-click="selectItem(4)" placeholder="Min 8 characters" />
+			    <button type="button" class="button button-clear" id="passwordvisible" ng-click="visible1()">
+			    	{{visiblestate}}
+			    </button>
+			</div>
+			<div class="list item item-input item-toggle itemtogglecustom" style="height:50px;">
+			    Keep me logged in?
+			    <label class="toggle toggle-energized" >
+			        <input type="checkbox">
+			        <div class="track">
+			        	<div class="handle"></div>
+			        </div>
+			    </label>
+			</div>
+
+			<div class="promo" style="padding-left:20px;">
+				PROMO CODE
+				<img src="images/microphone.png"></img>
+			</div>
+			<div class="list item item-input {{isSelected(5)}}">
+			    <input ng-model="userpromocode" type="text" ng-click="selectItem(5)" placeholder="Promo code or referral username">
+			</div>
+			<div style="height:30px;">
+			</div>	
+        </div>
+        <div class="signupbottom" >
+        	<a class="button button-balanced button-small btnSignup {{signupclick}}" ng-mousedown="down()" ng-mouseup="up()" ng-click="menu()">
+          		SIGN UP
+        	</a>
+        </div>
+        <div class="signupbottomtext">
+        	By signing up, you confirm that you are at least 18 years of age and agree to the Terms of use
+		</div>
+    </ion-content>
+</ion-view>

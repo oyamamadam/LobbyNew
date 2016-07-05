@@ -1,0 +1,315 @@
+<ion-view cache-view="false" title="" left-buttons="leftButtons" style="background-color:#555;" >
+
+	<div class="menu_btn_bar">
+		<div class="button button-clear button-light menu_btn_custom1" ng-click="lobby()">
+			LOBBY<br>
+			<img src="images/lobby.png" class="menu_img_custom">
+		</div>
+		<div class="button button-clear button-light menu_btn_custom1" ng-click="upcoming()">
+			UPCOMING<br>
+			<div class="label menu_label_custom" style="color:#fff">{{upcoming}}</div>
+		</div>
+		<div class="button button-clear button-light menu_btn_custom1" ng-click="live()">
+			LIVE<br>
+			<div class="label menu_label_custom">{{live}}</div>
+		</div>
+		<div class="button button-clear button-light menu_btn_custom1" ng-click="recent()">
+			RECENT<br>
+			<img src="images/recents.png" class="menu_img_custom" >
+		</div>
+	</div>
+	<div class="menu_action_bar">
+		<div class="{{state0}}"></div>
+		<div class="{{state1}}"></div>
+		<div class="{{state2}}"></div>
+		<div class="{{state3}}"></div>
+	</div>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+      <ion-slide>
+      
+        <div class="list content_custom" style=" height:{{list_height}}px; ">
+            <ion-content style="top:0px;">
+        	<div class="item" ng-click="nfl_list_click()" ng-show="nfl_show_state">
+        		<div >
+	        		<img src="images/nfl.png" class="menu_img_custom1">
+	        		<div class="menu_nfl_title">NFL</div>
+	        		<img src="images/{{dropdownimg_nfl}}.png" class="menu_img_custom2" >
+	        		<div class="menu_nfl_value">
+	        			{{nfl_count}}
+	        		</div>
+        		</div>
+        		<div class="menu_nfl_item" ng-show="showNFLlist">
+        			<div class="item menu_nfl_item1" ng-repeat="item in items_nfl" ng-click="nfl_item_click()">
+        				<div class="menu_nfl_list_item">
+        					<div class="menu_nfl_list_date">
+                    
+                    <mydate>{{item.startsAt | date:'yyyy-MM-dd HH:mm'}}</mydate>
+                  </div>
+        					<div class="menu_nfl_list_during">{{item.name}}</div>
+        				</div>
+        				<img src="images/chevronright.png" class="menu_img_custom_nfl">
+        				<div class="menu_nfl_count">{{item.activeGames}}</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="item" ng-click="nhl_list_click()" ng-show="nhl_show_state">
+        		<div >
+	        		<img src="images/nhl.png" class="menu_img_custom1">
+	        		<div class="menu_nfl_title">NHL</div>
+	        		<img src="images/{{dropdownimg_nhl}}.png" class="menu_img_custom2" >
+	        		<div class="menu_nfl_value">
+	        			{{nhl_count}}
+	        		</div>
+        		</div>
+        		<div class="menu_nfl_item" ng-show="showNHLlist">
+        			<div class="item menu_nfl_item1" ng-repeat="item in items_nhl" ng-click="nhl_item_click()">
+        				<div class="menu_nfl_list_item">
+        					<div class="menu_nfl_list_date">{{item.startsAt}}</div>
+        					<div class="menu_nfl_list_during">{{item.name}}</div>
+        				</div>
+        				<img src="images/chevronright.png" class="menu_img_custom_nfl">
+        				<div class="menu_nfl_count">{{item.activeGames}}</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="item" ng-click="nba_list_click()" ng-show="nba_show_state">
+        		<div >
+	        		<img src="images/nba.png" class="menu_img_custom1">
+	        		<div class="menu_nfl_title">NBA</div>
+	        		<img src="images/{{dropdownimg_nba}}.png" class="menu_img_custom2" >
+	        		<div class="menu_nfl_value">
+	        			{{nba_count}}
+	        		</div>
+        		</div>
+        		<div class="menu_nfl_item" ng-show="showNBAlist">
+        			<div class="item menu_nfl_item1" ng-repeat="item in items_nba" ng-click="nba_item_click()">
+        				<div class="menu_nfl_list_item">
+        					<div class="menu_nfl_list_date">{{item.startsAt}}</div>
+        					<div class="menu_nfl_list_during">{{item.name}}</div>
+        				</div>
+        				<img src="images/chevronright.png" class="menu_img_custom_nfl">
+        				<div class="menu_nfl_count">{{item.activeGames}}</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="item" ng-click="mlb_list_click()" ng-show="mlb_show_state">
+        		<div >
+	        		<img src="images/mlb.png" class="menu_img_custom1">
+	        		<div class="menu_nfl_title">MLB</div>
+	        		<img src="images/{{dropdownimg_mlb}}.png" class="menu_img_custom2" >
+	        		<div class="menu_nfl_value">
+	        			{{mlb_count}}
+	        		</div>
+        		</div>
+        		<div class="menu_nfl_item" ng-show="showMLBlist">
+        			<div class="item menu_nfl_item1" ng-repeat="item in items_mlb" ng-click="mlb_item_click()">
+        				<div class="menu_nfl_list_item">
+        					<div class="menu_nfl_list_date">{{item.startsAt}}</div>
+        					<div class="menu_nfl_list_during">{{item.name}}</div>
+        				</div>
+        				<img src="images/chevronright.png" class="menu_img_custom_nfl">
+        				<div class="menu_nfl_count">{{item.activeGames}}</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="item" ng-click="cfb_list_click()" ng-show="cfb_show_state">
+        		<div >
+	        		<img src="images/cfb.png" class="menu_img_custom1">
+	        		<div class="menu_nfl_title">CFB</div>
+	        		<img src="images/{{dropdownimg_cfb}}.png" class="menu_img_custom2" >
+	        		<div class="menu_nfl_value">
+	        			{{cfb_count}}
+	        		</div>
+        		</div>
+        		<div class="menu_nfl_item" ng-show="showCFBlist">
+        			<div class="item menu_nfl_item1" ng-repeat="item in items_cfb" ng-click="cfb_item_click()">
+        				<div class="menu_nfl_list_item">
+        					<div class="menu_nfl_list_date">{{item.startsAt}}</div>
+        					<div class="menu_nfl_list_during">{{item.name}}</div>
+        				</div>
+        				<img src="images/chevronright.png" class="menu_img_custom_nfl">
+        				<div class="menu_nfl_count">{{item.activeGames}}</div>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="item" ng-click="cbb_list_click()" ng-show="cbb_show_state">
+        		<div >
+	        		<img src="images/cbb.png" class="menu_img_custom1">
+	        		<div class="menu_nfl_title">CBB</div>
+	        		<img src="images/{{dropdownimg_cbb}}.png" class="menu_img_custom2" >
+	        		<div class="menu_nfl_value">
+	        			{{cbb_count}}
+	        		</div>
+        		</div>
+        		<div class="menu_nfl_item" ng-show="showCBBlist">
+        			<div class="item menu_nfl_item1" ng-repeat="item in items_cbb" ng-click="cbb_item_click()">
+        				<div class="menu_nfl_list_item">
+        					<div class="menu_nfl_list_date">{{item.startsAt}}</div>
+        					<div class="menu_nfl_list_during">{{item.name}}</div>
+        				</div>
+        				<img src="images/chevronright.png" class="menu_img_custom_nfl">
+        				<div class="menu_nfl_count">{{item.activeGames}}</div>
+        			</div>
+        		</div>
+        	</div>
+        </ion-content>
+        </div>
+        <div class="lobby_bottom_text">
+        	<div>No open games</div>
+        	<div class="lobby_bottom_text1" ng-show="openstate_nfl">
+        		<img src="images/nfl_grey.png" class="menu_img_custom" >
+        		NFL
+        	</div>
+        	<div class="lobby_bottom_text1" ng-show="openstate_nhl">
+        		<img src="images/nhl_grey.png" class="menu_img_custom" >
+        		NHL
+        	</div>
+        	<div class="lobby_bottom_text1" ng-show="openstate_nba">
+        		<img src="images/nba_grey.png" class="menu_img_custom" >
+        		NBA
+        	</div>
+        	<div class="lobby_bottom_text1" ng-show="openstate_mlb">
+        		<img src="images/mlb_grey.png" class="menu_img_custom" >
+        		MLB
+        	</div>
+        	<div class="lobby_bottom_text1" ng-show="openstate_cfb">
+        		<img src="images/cfb_grey.png" class="menu_img_custom" >
+        		CFB
+        	</div>
+        	<div class="lobby_bottom_text1" ng-show="openstate_cbb">
+        		<img src="images/cbb_grey.png" class="menu_img_custom" >
+        		CBB
+        	</div>
+        </div>
+        <div style="height:500px;"></div>
+   
+      </ion-slide>
+      <ion-slide>
+
+        <div id = "slide" class = "back-image" style=" height:{{list_height}}px">
+            <ion-content style="top:20px;">
+            <div style="border-bottom:1px solid #000; font-size:15px; background-color:#ddd; color:#000; margin:5px;">
+                <img src="images/nfl.png" style="vertical-align: middle;">
+                <span style="font-size:20px;">10/9/15 7pm ET</span>
+                <div>
+                    Player1,Player2,Player3,Player4,Player5,Player6,Player7,Player8,Player9
+                </div>
+            </div>
+
+          <div class="list">
+            
+                <div class="item" ng-repeat="item in items1" ng-click="featured_item_click()">
+                  
+                  <div style="margin-top:5px;">
+                    <div style="float:left; width:90%; color:#07a; font-size:20px; font-weight:bold;">{{item.type}}</div>
+                    <img src="images/multientry.png">
+                    <img src="images/guaranteed.png">
+                  </div>
+                  <div>
+                    <div style="width:70%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Entries</div>
+                      <div >
+                          <span style=" font-weight:bold;">{{item.entries1}}</span>
+                          <span>/{{item.entries2}}</span>
+                      </div>
+                    </div>
+                    <div style="width:10%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Entry</div>
+                      <div style="font-weight:bold;">{{item.entry}}</div>
+                    </div>
+                    <div style="width:10%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Prizes</div>
+                      <div style="font-weight:bold;">{{item.prizes}}</div>
+                    </div>
+                  </div>
+                </div>
+
+            </div>
+            </ion-content>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div id = "slide" class = "back-image" style=" height:{{list_height}}px">
+            <ion-content style="top:20px;">
+            <div style="border-bottom:1px solid #000; font-size:15px; background-color:#ddd; color:#000; margin:5px;">
+                <img src="images/nfl.png" style="vertical-align: middle;">
+                <span style="font-size:20px;">10/9/15 7pm ET</span>
+                <div>
+                    Player1,Player2,Player3,Player4,Player5,Player6,Player7,Player8,Player9
+                </div>
+            </div>
+
+          <div class="list">
+                <div class="item" ng-repeat="item in items1" ng-click="featured_item_click()">
+                  
+                  <div style="margin-top:5px;">
+                    <div style="float:left; width:90%; color:#07a; font-size:20px; font-weight:bold;">{{item.type}}</div>
+                    <img src="images/multientry.png">
+                    <img src="images/guaranteed.png">
+                  </div>
+                  <div>
+                    <div style="width:70%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Position</div>
+                      <div >
+                          <span style=" font-weight:bold;">{{item.entries1}}</span>
+                          <span>/{{item.entries2}}</span>
+                      </div>
+                    </div>
+                    <div style="width:10%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Entry</div>
+                      <div style="font-weight:bold;">{{item.entry}}</div>
+                    </div>
+                    <div style="width:10%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Won</div>
+                      <div style="font-weight:bold;">{{item.prizes}}</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </ion-content>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div id = "slide" class = "back-image" style="height:{{list_height}}px">
+            <ion-content style="top:20px;">
+            <div style="border-bottom:1px solid #000; font-size:15px; background-color:#ddd; color:#000; margin:5px;">
+                <img src="images/nfl.png" style="vertical-align: middle;">
+                <span style="font-size:20px;">10/9/15 7pm ET</span>
+                <div>
+                    Player1,Player2,Player3,Player4,Player5,Player6,Player7,Player8,Player9
+                </div>
+            </div>
+
+          <div class="list">
+                <div class="item" ng-repeat="item in items1" ng-click="featured_item_click()">
+                  
+                  <div style="margin-top:5px;">
+                    <div style="float:left; width:90%; color:#07a; font-size:20px; font-weight:bold;">{{item.type}}</div>
+                    <img src="images/multientry.png">
+                    <img src="images/guaranteed.png">
+                  </div>
+                  <div>
+                    <div style="width:70%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Position</div>
+                      <div >
+                          <span style=" font-weight:bold;">{{item.entries1}}</span>
+                          <span>/{{item.entries2}}</span>
+                      </div>
+                    </div>
+                    <div style="width:10%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Entry</div>
+                      <div style="font-weight:bold;">{{item.entry}}</div>
+                    </div>
+                    <div style="width:10%; float:left;">
+                      <div style="color:#aaa; font-size:12px;">Won</div>
+                      <div style="font-weight:bold;">{{item.prizes}}</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </ion-content>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+</ion-view>

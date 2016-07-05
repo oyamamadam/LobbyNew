@@ -1,0 +1,77 @@
+<ion-view title="" class="back-image" >
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsclose.png" class="addfunds_backbtnimage" />Withdraw
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+    	<div class="button-bar" style="background-color:#fff; height:40px; padding:5px;">
+	    	<a class="button button-energized {{paypal_state}}" ng-click="paypal_click()">PayPal</a>
+	    	<a class="button button-energized {{check_state}}" ng-click="check_click()">Check</a>
+	    </div>
+
+	    <div ng-show = "show_paypal">
+	    	<div style="width:100%; height:50px; background-color:#ddd; color:#888; font-size:20px; margin-top:20px; padding-left: 20px; padding-top:5px; ">
+	    		REQUEST PAYPAL WITHDRAWAL<br>
+	    		Available balance: $ {{available}}
+	    	</div>
+	    	<label class="list item item-input">
+        		<span class="input-label inputlabelcustom">Amount $</span>
+				<input type="text" ng-click="selectItem(0)">
+			</label>
+			<label class="list item item-input">
+				<span class="input-label inputlabelcustom">Paypal Email</span>
+			    <input type="text" ng-click="selectItem(1)">
+			</label>
+			<div style="text-align:center;">This is the email address we will send money to via PayPal</div>
+			<div style="background-color:#ddd; text-align: center; width:100%; margin:auto;">
+				<button class="button button-energized" style="margin-top:20px;margin-bottom:20px;">Submit</button>
+				<div style="color:#888;">
+					If you used PayPal to make deposites then you can withdraw into the same PayPal account.
+				</div>
+			</div>
+	    </div>
+	    <div ng-show = "show_check">
+	    	<div style="width:100%; height:50px; background-color:#ddd; color:#888; font-size:20px; margin-top:20px; padding-left: 20px; padding-top:5px; ">
+	    		REQUEST PAYPAL WITHDRAWAL<br>
+	    		Available balance: $ {{available}}
+	    	</div>
+	    	<label class="list item item-input">
+        		<span class="input-label inputlabelcustom">Full name</span>
+				<input type="text" ng-click="selectItem(0)">
+			</label>
+			<label class="list item item-input">
+				<span class="input-label inputlabelcustom">Amount $</span>
+			    <input type="text" ng-click="selectItem(1)">
+			</label>
+
+			<div style="width:100%; height:50px; background-color:#ddd; color:#888; font-size:20px; margin-top:20px; padding-left: 20px; padding-top:25px; text-align:bottom;">
+	    		Address
+	    	</div>
+	    	<label class="list item item-input">
+        		<span class="input-label inputlabelcustom">Address1</span>
+				<input type="text" ng-click="selectItem(0)" placeholder="Street number and name">
+			</label>
+			<label class="list item item-input">
+				<span class="input-label inputlabelcustom">Address2</span>
+			    <input type="text" ng-click="selectItem(1)" placeholder="Apartment,suite,Unit etc">
+			</label>
+			<label class="list item item-input">
+        		<span class="input-label inputlabelcustom">City</span>
+				<input type="text" ng-click="selectItem(0)">
+			</label>
+			<label class="list item item-input">
+				<span class="input-label inputlabelcustom">State/Provice Alabama</span>
+			    <input type="text" ng-click="selectItem(1)">
+			</label>
+			<label class="list item item-input">
+				<span class="input-label inputlabelcustom">Zip/Postal code</span>
+			    <input type="text" ng-click="selectItem(1)">
+			</label>
+
+			<div style="background-color:#ddd; text-align: center; width:100%; margin:auto;">
+				<button class="button button-energized" style="margin-top:20px;margin-bottom:20px;">Submit</button>
+			</div>
+	    </div>
+	</ion-content>
+</ion-view>

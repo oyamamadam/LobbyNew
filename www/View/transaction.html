@@ -1,0 +1,17 @@
+<ion-view title="" class="back-image" >
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsclose.png" class="addfunds_backbtnimage" />Transaction History
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+    	<div class="list">
+    		<div class="item" ng-repeat="item in transactions">
+    			<div style="font-size:20px; color:#888;">{{item.note}}</div>
+    			<div style="font-size:15px; color:#aaa;">{{item.logged | date:'yyyy-MM-dd HH:mm'}}</div>
+    			<div style="font-size:20px; color:#888;">{{item.transactionID}}</div>
+    			<div style="font-size:20px; color:#0d0; text-align:right; width:100%">${{item.amount}}</div>
+    		</div>
+    	</div>
+	</ion-content>
+</ion-view>

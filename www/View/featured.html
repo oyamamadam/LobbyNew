@@ -1,0 +1,50 @@
+j<ion-view title="" class="back-image" style = "background-color:#eee;">
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsback.png" class="addfunds_backbtnimage" />Featured
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+    	<div style=" height:50px; background-color:#444; margin:auto; ">
+    		<!--<button class="button button-clear button-energized" style="font-size:20px;float:left;" ng-click="feeclick($event)">Any Fee</button>-->
+    		<button class="button icon-left ion-chevron-down button-clear button-energized" style="font-size:20px;float:right;" ng-click="showMenu($event)">By Entries</button>
+    	</div>
+
+      <div class="list">
+        <div class="item" ng-repeat="item in items" ng-click="featured_item_click()">
+          <div>
+            <div style="float:left; width:90%; color:#07a; font-size:20px; font-weight:bold;">{{item.name}}</div>
+            <img style="padding:2px;" src="images/multientry.png" ng-show="item.multiEntry==true">
+            <img style="padding:2px;" src="images/guaranteed.png" ng-show="item.guaranteed==true">
+          </div>
+          <div>
+            <div style="width:70%; float:left;">
+              <div style="color:#aaa; font-size:12px;">Entries</div>
+              <div >
+                  <span style=" font-weight:bold;">{{item.currentEntries}}</span>
+                  <span>/{{item.maxEntries}}</span>
+              </div>
+            </div>
+            <div style="width:10%; float:left;">
+              <div style="color:#aaa; font-size:12px;">Entry</div>
+              <div style="font-weight:bold;">${{item.entryFee}}</div>
+            </div>
+            <div style="width:10%; float:left;">
+              <div style="color:#aaa; font-size:12px;">Prizes</div>
+              <div style="font-weight:bold;">{{item.totalPrizes}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <div class="bar bar-dark" style="width:100%; height:30px; text-align:center; color:#444;">
+        <img src="images/multientry.png" style="float:left;width:20px;heght:20px;">
+        <div style="color:#fff;margin:auto;">MULTI-ENTRY</div>
+        <img src="images/guaranteed.png" style="width:20px;heght:20px;">
+        <div style="color:#fff;margin:auto;">GUARANTED</div>
+        <img src="images/lobby_entered.png" style="width:20px;heght:20px;">
+        <div style="color:#fff;margin:auto;">Entered</div>
+      </div>
+    </ion-content>
+
+</ion-view>

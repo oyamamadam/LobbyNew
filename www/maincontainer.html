@@ -1,0 +1,79 @@
+<ion-side-menus>
+
+    <ion-pane ion-side-menu-content drag-content="false">
+        <ion-nav-bar class="bar-dark nav-title-slide-ios7">
+          <ion-nav-buttons side="left">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon">FanPicks</button>
+          </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="appContent"></ion-nav-view>
+    </ion-pane>
+
+    <ion-side-menu side="left" style="background-color:#444;">
+        <!--<header class="bar bar-header bar-assertive">
+            <div class="title">Side Menu</div>
+        </header>-->
+        <ion-content has-header="true">
+            <ul class="list">
+                <div class="item menu_itemcustom" >
+                    <div class="item item-avatar menu_itemcustom" style="border:none !important;" >
+                        <img  src="{{useravatar}}">
+                        <label class="menu_username">{{username}}</label>
+                    </div>
+                    <div class="menu_item1">
+                        <label class="menu_account">ACCOUNT BALANCE</label>
+                        <label class="menu_account_value">{{account_balance}}</label>
+                    </div>
+                    <div class="menu_item1">
+                        <label class="menu_pending">Fanpicks to Points</label>
+                        <label class="menu_pending_value">{{pending_balance}}</label>
+                    </div>
+                    <div class="menu_item1">
+                        <label class="menu_funpicks">FANPICKS</label>
+                        <label class="menu_funpicks_value">{{fanpicks_point}}</label>
+                    </div>
+                </div>
+                <div class="item menu_itemcustom">
+                    <div class="menu_item2" ng-click="addfunds()">
+                        <label class="menu_label_custom1">Add Funds</label>
+                        <img src="images/menu_icons_transaction_history.png" class="menu_image_custom" >
+                    </div>
+                    <div class="menu_item2" ng-click="withdraw()">
+                        <label class="menu_label_custom1">Withdraw</label>
+                        <img src="images/menu_icons_withdraw_funds.png" class="menu_image_custom" >
+                    </div>
+                    <div class="menu_item2" ng-click="transactionhistory()">
+                        <label class="menu_label_custom1">Transaction History</label>
+                        <img src="images/menu_icons_transaction_history.png" class="menu_image_custom" >
+                    </div>
+                </div>
+                <div class="item menu_itemcustom">
+                    <div class="menu_item2" ng-click="howtoplay()">
+                        <label class="menu_label_custom1">How to Play</label>
+                        <img src="images/menu_icons_export_how_to_play.png" class="menu_image_custom" >
+                    </div>
+                    <div class="menu_item2" ng-click="about()">
+                        <label class="menu_label_custom1">About FanPicks</label>
+                        <img src="images/menu_icons_export_about_fan_duel.png" class="menu_image_custom" >
+                    </div>
+                    <div class="menu_item2" ng-click="rules()">
+                        <label class="menu_label_custom1">Rules</label>
+                        <img src="images/menu_icons_rules.png" class="menu_image_custom" >
+                    </div>
+                    <div class="menu_item2" ng-click="support()">
+                        <label class="menu_label_custom1">Support</label>
+                        <img src="images/menu_icons_export_support.png"class="menu_image_custom" >
+                    </div>
+                </div>
+                <div class="item menu_itemcustom">
+                    <div class="menu_item2" ng-click="logout()">
+                        <label class="menu_label_custom1">Log Out</label>
+                        <img src="images/menu_icons_export_logout.png" class="menu_image_custom" >
+                    </div>
+                </div>
+            </ul>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>
+

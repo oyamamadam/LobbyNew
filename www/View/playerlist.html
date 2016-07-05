@@ -1,0 +1,45 @@
+<ion-view title="" class="back-image" style = "background-color:#eee;">
+  <ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsclose.png" class="addfunds_backbtnimage" />Select QB
+      </ion-nav-back-button>
+      
+    </ion-nav-bar>
+
+  <ion-content>
+  <div class="list">
+
+    <div class="item item-thumbnail-left" ng-click="playeritemclick(item)" ng-repeat="item in playerlist" >
+      <img src="images/placeholder_avatar.png">
+      <div style="font-size:20px; float:left; padding-top:15px;">
+        <span style="color:#7df; font-weight:bold; font-size:22px;">{{item.position}}</span>
+        <span>{{item.firstname}}</span><span style="margin-left:10px;">{{item.lastname}}</span>
+        <div>
+          <span>{{item.homeTeam}}</span> @ <span>{{item.awayTeam}}</span>
+        </div>
+        <div style="color:#aaa; font-size:15px; font-weight:bold;">
+          {{item.startsAt | date:'yyyy-MM-dd HH:mm'}}
+        </div>
+      </div>
+
+      <button class="button button-clear" style="float:right; top:25px;" ng-click="playerselect(item);$event.stopPropagation()">
+        <img src="images/actionbar__iconsadd.png" >
+      </button>
+
+      <div style="float:right; border-right:1px; border-right-style:solid; margin-top:15px;">
+        <div style="color:#000; font-weight:bold; font-size:22px;">{{item.salary}}</div>
+        <div style="font-size:15px; color:#aaa">
+          <span>FPPG</span>
+          <span>Played</span>
+        </div>
+        <div style="color:#aaa; font-size:15px; font-weight:bold;">
+          <span>{{item.ffpg}}</span>
+          <span style="margin-left:15px;">{{item.played}}</span>
+        </div>
+      </div> 
+    </div>
+
+  </div>
+  </ion-content>
+
+</ion-view>

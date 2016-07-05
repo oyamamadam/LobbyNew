@@ -1,0 +1,142 @@
+<ion-view>
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsback.png" class="addfunds_backbtnimage" />Player Details
+      </ion-nav-back-button>
+      <ion-nav-buttons side="right" >
+        <button class="button-clear" ng-click="contestinfo()" ng-show="addbutton_state">
+          <i class="ion-arrow-left-c" style="display:none"></i><img src="images/actionbar__iconsadd.png" class="addfunds_backbtnimage" />
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-content scroll="false">
+    	<div class="item-thumbnail-left" style="background-color:#444;" >
+	      <img src="images/placeholder_avatar.png">
+	      <div style="font-size:20px; float:left; padding-top:15px; color:#fff;">
+	        <span style="color:#fff; font-weight:bold; font-size:22px;">{{player_position}}</span>
+	        	<span>{{player_firstname}}</span>
+              	<span style="margin-left:10px;">{{player_lastname}}</span>  
+	        <div>
+	          <span>{{player_homeTeam}}</span> @ <span>{{player_awayTeam}}</span>
+	        </div>
+	        <div style="color:#aaa; font-size:15px; font-weight:bold;">
+	           {{player_startsAt | date:'yyyy-MM-dd HH:mm'}}
+	        </div>
+	      </div>
+	      <div style="float:right; border-right:1px; border-right-style:solid; margin-top:15px;">
+	        <div style="color:#fff; font-weight:bold; font-size:22px;">{{player_salary}}</div>
+	        <div style="font-size:15px; color:#aaa">
+	          <span>FPPG</span>
+	          <span>Played</span>
+	        </div>
+	        <div style="color:#fff; font-size:15px; font-weight:bold;">
+	          <span>{{player_ffpg}}</span>
+	          <span style="margin-left:15px;">{{player_timesPlayed}}</span>
+	        </div>
+	      </div> 
+	    </div>
+
+	    <div class="button-bar" style="background-color:#fff; height:40px; padding:5px;">
+	    	<a class="button button-energized {{summary_click}}" ng-click="summary_state()">Summary</a>
+	    	<a class="button button-energized {{gamelog_click}}" ng-click="gamelog_state()">Game Log</a>
+	    	<a class="button button-energized {{news_click}}" ng-click="news_state()">News</a>
+	    </div>
+
+	    <div  ng-show="show_summary">
+	    	<div  style="height:40px; width=100%; background-color:#444; color:#fff; margin-top:20px; font-size:20px; padding-left:30px;padding-top:8px;">Season</div>
+	    	<div style="width:95%;height:80px">
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_gamesPlayed}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">GAME PLAYED</div>
+	    		</div>
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_passesCompleted}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">PASSED COMPLETED</div>
+	    		</div>
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_passesAttempted}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">PASSED ATTEMPTED</div>
+	    		</div>
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_passingYards}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">PASSING YARDS</div>
+	    		</div>
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_passingTDS}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">PASSING TDS</div>
+	    		</div>
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_carries}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">CARRIES</div>
+	    		</div>
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_rushingYards}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">RUSHING YARDS</div>
+	    		</div>
+	    		<div style="float:left; width:25%;">
+	    			<div style="font-size:20px;text-align:right;">{{player_rushingTDS}}</div>
+	    			<div style="font-size:10px;color:#ccc;text-align:right;">RUSHING TDS</div>
+	    		</div>
+	    	</div>
+	    	<div class="bar bar-footer bar-dark" style="text-align:center; display: block !important">
+	    		Recent News(< 1 week)
+	    	</div>
+
+	    	<div style="height:40px; width:100%; background-color:#444; color#fff; font-size:20px;color:#fff; padding-top:8px; padding-left:30px;">Lastest News</div>
+	    	<div>
+	    		<div style="font-size:20px; padding-left:10px; ">
+	    		<ion-content style="top:350px;">
+	    			<span style="color:#fd7;">{{lastestnews_logged | date:'yyyy-MM-dd HH:mm'}}</span>
+					<div>{{lastestnews_text}}
+					</div>
+	    		</ion-content>
+	    		</div>
+	    		
+	    	</div>
+
+	    </div>
+
+	    <div  ng-show="show_gamelog">
+	    	<div  style="height:40px; width=100%; background-color:#444; color:#fff; margin-top:20px; font-size:20px; padding-left:30px;padding-top:8px;">Game Log</div>
+	    	<div>
+	    		<ion-content style="top:200px;">
+	    		<div ng-repeat="item1 in gamelogs">
+	    			<div>{{item1.during | date:'yyyy-MM-dd HH:mm'}}</div>
+	    			<div >
+	    				<table style="width:100%;">
+						  <tr style="background-color:#444; color:#fff;">
+						    <th ng-repeat="item in gameslogitem">{{item.data1}}</th>
+						  </tr>
+						  <tr>
+						    <td ng-repeat="item in gameslogitem">{{item.data2[0]}}</td>
+						  </tr>
+						  <tr>
+						    <td ng-repeat="item in gameslogitem">{{item.data2[1]}}</td>
+						  </tr>
+
+						</table>
+	    			</div>
+	    		</div>
+	    		</ion-content>
+	    	</div>
+	    </div>
+
+	    <div  ng-show="show_news">
+	    	<div  style="height:40px; width=100%; background-color:#444; color:#fff; margin-top:20px; font-size:20px; padding-left:30px;padding-top:8px;">News</div>
+	    	<div style="font-size:20px; padding-left:10px;">
+	    	
+		    	<ion-content style="top:200px;" ng-repeat="item in newsitems">
+					<span style="color:#fd7;">{{item.news_logged | date:'yyyy-MM-dd HH:mm'}}</span>
+					<div>{{item.news_text}}
+					</div>
+					<!--<div>ANALYSIS: aaakajsdflkajsdl;jasrjisdjflkasjdklfjasl;dkfjaso;igjal;skdghasidhfaso;eirjhweiohgas;dklf;askldfjalsdj</div>-->
+				</ion-content>
+			
+			</div>
+			<div class="bar bar-footer bar-dark" style="text-align:center; display: block !important">
+	    		Recent News(< 1 week)
+	    	</div>
+	    </div>
+
+	</ion-content>
+</ion-view>

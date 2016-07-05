@@ -1,0 +1,50 @@
+<ion-view title="" class="back-image fifty-background">
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c" style="display:none"></i><img src="images/action_bar_iconsback.png" class="addfunds_backbtnimage" />50/50s
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-content>
+    	<div class="fifty-content" >
+    		
+    		<button class="button icon-left ion-chevron-down button-clear button-energized fifty-content-button" ng-click="showMenu($event)">By Entries</button>
+    	</div>
+
+      <div class="list">
+        <div class="item" ng-repeat="item in items" ng-click="c50s_item_click()">
+          <div>
+            <div class="fifty-list-name" >{{item.name}}</div>
+            <!--<img src="images/multientry.png">
+            <img src="images/guaranteed.png">-->
+          </div>
+          <div>
+            <div class="fifty-list-entries" >
+              <div class="fifty-list-entries-entry" >Entries</div>
+              <div >
+                  <span clas="fifty-list-entries-current" >{{item.currentEntries}}</span>
+                  <span>/{{item.maxEntries}}</span>
+              </div>
+            </div>
+            <div class="fifty-list-entryfee" >
+              <div class="fifty-list-entryfee-entry" >Entry</div>
+              <div class="fifty-list-entryfee-item" >{{item.entryFee}}</div>
+            </div>
+            <div class="fifty-list-prizes" >
+              <div class="fifty-list-prizes-prizes" >Prizes</div>
+              <div class="fifty-list-prizes-total" >{{item.totalPrizes}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+     <div class="bar bar-dark fifty-bar" >
+        <img src="images/multientry.png" class="fifty-multi-image" >
+        <div class="fifty-multi-entry" >MULTI-ENTRY</div>
+        <img class="fifty-multi-entry-image" src="images/guaranteed.png" >
+        <div class="fifty-guaranted" >GUARANTED</div>
+        <img class="fifty-guaranted-image" src="images/lobby_entered.png" >
+        <div class="fifty-entered" >Entered</div>
+      </div>
+    </ion-content>
+
+</ion-view>

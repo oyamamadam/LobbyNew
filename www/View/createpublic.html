@@ -1,0 +1,59 @@
+<ion-view title="" class="back-image" >
+	<ion-nav-bar class="bar-dark">
+      <ion-nav-back-button class="button-clear button-energized">
+      	Cancel
+      </ion-nav-back-button>
+      <ion-nav-buttons side="right">
+      	<button class="button button-clear button-energized" ng-click="next()">Next</button>
+  	  </ion-nav-buttons>
+    </ion-nav-bar>
+  <ion-content>
+    <div class="bar bar-dark">
+      <div style="height:30px; background-color:#5ad; padding-left:20px;padding-top:5px; color:#fff;float:left; width:100%; border-radius:5px;">
+          <img src="images/mlb.png" style="float:left;width:20px;heght:20px; vertical-align:middle; margin:auto;">
+          <div style="margin:auto; margin-left:30px;">Starts 7pm ET  
+            <div style="float:right;margin:auto; margin-right:20px;">{{date | date:'hh:mm:ss'}}</div>
+          </div>
+      </div>
+    </div>
+    
+    <div class="list" style="margin-left:0px !important;margin-right:0px !important;">
+      <div style="width:100%; height:40px; color:#888; background-color:#ccc; margin-top:40px; padding-top:10px;">
+        <div style="float:left; padding-left:10px;">ENTRY FEE</div>
+        <div style="float:right; padding-right:10px;">COUNT</div>
+      </div>
+      <div class="item" style="border-color:#ccc !important; color:#888;">
+        <div style="float:left">$1 to win $1.80</div>
+        <div style="float:right">0</div>
+      </div>
+
+      <div class="item" style="border-color:#ccc !important; color:#888;">
+        <div style="float:left">$1 to win $1.80</div>
+        <div style="float:right">0</div>
+      </div>
+      <div class="item" style="border-color:#ccc !important; color:#888;">
+        <div style="float:left">$1 to win $1.80</div>
+        <div style="float:right">0</div>
+      </div>
+      <div class="item" style="border-color:#ccc !important; color:#888;">
+        <div style="float:left">$1 to win $1.80</div>
+        <div style="float:right">0</div>
+      </div>
+      <div class="item" style="border-color:#ccc !important; color:#888;">
+        <div style="float:left">$1 to win $1.80</div>
+        <div style="float:right">0</div>
+      </div>
+
+      <div class="bar bar-footer bar-dark" style=" display: block !important">
+        <div style="float:left;">
+          <div style="color:#888;">TOTAL ENTRY FEE</div>
+          <div style="color:#fff;">$0</div>
+        </div>
+        <div style="float:right;">
+          <div style="color:#888; text-align:right;">POTENTIAL WINNINGS</div>
+          <div style="color:#fff; text-align:right;">$0</div>
+        </div>
+      </div>
+    </div>
+	</ion-content>
+</ion-view>
